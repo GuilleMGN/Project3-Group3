@@ -7,6 +7,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import streamlit as st
 import csv
+import datetime
 
 with open("contracts/crowdfund_abi.json") as file:
     abi = json.load(file)
@@ -28,12 +29,23 @@ goal_amount = int(st.number_input("Select your fundraising goal"))
 contribution_minimum = int(st.number_input("Select the minimum amount to contribute"))
 beneficiary_address = st.text_input("Paste your beneficiary address")
 uri = st.text_input("Paste your URI")
-end_date = st.date_input("Enter your end date")
+end_date_input = st.date_input("Enter your end date")
+end_date = int(
+    datetime.datetime.combine(end_date_input, datetime.datetime.min.time()).timestamp()
+)
+print(type(end_date))
+print(end_date)
+refund_flag = st.checkbox("Do you want to be able to refund the contract?")
 if st.button("Deploy Contract"):
     nonce = w3.eth.getTransactionCount(address)
     # build transaction
     transaction = new_contract.constructor(
-        goal_amount, contribution_minimum, beneficiary_address, uri
+        goal_amount,
+        contribution_minimum,
+        beneficiary_address,
+        uri,
+        refund_flag,
+        end_date,
     ).buildTransaction(
         {
             "chainId": chain_id,
