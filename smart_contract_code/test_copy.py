@@ -57,15 +57,12 @@ contribution_amount = int(
     )
 )
 selected_contract = contract[selected]
-today = datetime.datetime.today()
-
+today = int(datetime.datetime.today().timestamp())
 if st.button("Contribute"):
     completion_flag = selected_contract.functions.fundraise_complete_flag().call()
     if completion_flag:
         st.write("Fundraising is complete, you cannot contribute to this fundraiser!")
-    elif today > datetime.datetime.strptime(
-        dictionary[selected]["target_date"], "%Y-%m-%d"
-    ):
+    elif today > int(dictionary[selected]["target_date"]):
         st.write(
             "Fundraising date has passed, you cannot contribute to this fundraiser!"
         )

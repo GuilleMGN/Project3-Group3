@@ -20,6 +20,16 @@
                 "internalType": "string",
                 "name": "_tokenURI",
                 "type": "string"
+            },
+            {
+                "internalType": "bool",
+                "name": "_refundable_flag",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_date_stamp",
+                "type": "uint256"
             }
         ],
         "payable": false,
@@ -173,6 +183,21 @@
         "type": "function"
     },
     {
+        "constant": true,
+        "inputs": [],
+        "name": "contract_deployer_address",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "constant": false,
         "inputs": [],
         "name": "contribute",
@@ -222,6 +247,36 @@
                 "internalType": "address",
                 "name": "contributed_address",
                 "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "datePay",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "date_stamp",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
             }
         ],
         "payable": false,
@@ -365,6 +420,36 @@
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "refund",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "refundable_flag",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
             }
         ],
         "payable": false,

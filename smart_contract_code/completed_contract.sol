@@ -12,12 +12,17 @@ contract CrowdFund is ERC721Full {
     address public return_or_forward_address;
     string tokenURI;
     uint256 public iterator = 0;
+    address public contract_deployer_address = msg.sender;
+    bool public refundable_flag;
+    uint256 public date_stamp;
 
     constructor(
         uint256 _goal,
         uint256 _contribution_minimum,
         address _beneficiary_address,
-        string memory _tokenURI
+        string memory _tokenURI,
+        bool _refundable_flag,
+        uint256 _date_stamp
     )
         public
         //Target Date as an additional option
@@ -27,6 +32,8 @@ contract CrowdFund is ERC721Full {
         goal = _goal;
         beneficiary_address = _beneficiary_address;
         tokenURI = _tokenURI;
+        refundable_flag = _refundable_flag;
+        date_stamp = _date_stamp;
     }
 
     struct Test {
@@ -53,7 +60,7 @@ contract CrowdFund is ERC721Full {
             fundraise_complete_flag = true; //Flag the fundraise complete so that the contract can't be called
             address(uint160(beneficiary_address)).transfer(raised); //Send money to the beneficiary
             for (uint256 i = 0; i < contributorList.length; i++) {
-                _mint(contributorList[0].contributed_address, i);
+                _mint(contributorList[i].contributed_address, i);
                 _setTokenURI(
                     i,
                     string(abi.encodePacked(tokenURI, uintToString(i)))
@@ -62,6 +69,34 @@ contract CrowdFund is ERC721Full {
         }
         iterator = iterator + 1;
         return token_id;
+    }
+
+    //Certain organizations might want a callable refund built in - for example, if the fundraising campaign falls through.
+    //The contract deployer is set-up to call this function, hypothetically this could also be a trusted third party like a law firm or audit firm.
+    function refund() public payable returns (uint256) {
+        require(
+            msg.sender == contract_deployer_address && refundable_flag == true
+        );
+        fundraise_complete_flag = true;
+        for (uint256 i = 0; i < contributorList.length; i++) {
+            address(uint160(contributorList[i].contributed_address)).transfer(
+                contributorList[i].amount_contributed
+            );
+        }
+        return 0;
+    }
+
+    function datePay() public payable returns (uint256) {
+        require(date_stamp < now);
+        fundraise_complete_flag = true;
+        address(uint160(beneficiary_address)).transfer(raised); //Send money to the beneficiary
+        for (uint256 i = 0; i < contributorList.length; i++) {
+            _mint(contributorList[i].contributed_address, i);
+            _setTokenURI(
+                i,
+                string(abi.encodePacked(tokenURI, uintToString(i)))
+            );
+        } // This for loop mints a token for each person who is listed in the contributor list
     }
 
     //got this helper function from: https://ethereum.stackexchange.com/questions/96817/can-a-smart-contract-automatically-generate-tokenuri-based-on-tokenid
