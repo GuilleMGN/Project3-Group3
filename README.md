@@ -1,4 +1,5 @@
-# Project3-Group3
+# Crypto Crowdfunding 
+
 
 ## Description
 This project aims to start a crowdfunding contract in solidity and distribute NFTs as an incentive for contributors in a form of a picture (using a streamlit front end). 
@@ -9,27 +10,33 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
 * [Technologies](#technologies)
 * [Instructions](#instructions)
 * [Application](#application)
+* [Centralized vs Decentralized Contracts](#centralized-vs-decentralized-contracts)
 * [Conclusion](#conclusion)
 * [Contributors](#contributors)
 * [References and Resources](#references-and-resources)
 * [License](#license)
 
 ## Goals
-To Create a decentralized auction in Solidity
+To Create a decentralized fundraising in Solidity
 
 ## Technologies
-Ganache
-Remix
-Javascript
-Python
-Solidity
+* Ganache
+* Remix
+* Javascript Moralis Mutant NFT Engine
+* Python
+* Solidity
+* Web3
+* Pathlib
+* Os
+* Pandas
+* Streamlit
 
 ## Instructions
 
 ## Application 
 
-Centralized vs Decentralized Contracts
-Decentralized Applications (a.k.a DApps) Vs Centralized 
+## Centralized vs Decentralized Contracts
+
 
 Smart Contracts can be considered to be  back-end APIs running in the Blockchain, Decentralized Applications are the front-end or UX. They represent the visible layer connecting users or other applications with the Smart Contracts running in the Blockchain.
 
@@ -63,9 +70,10 @@ ledger. Because participants’ identities are known, their transactions can the
 [![](https://github.com/Yu9Psx2.png?size=50)](https://github.com/Yu9Psx2)
 [![](https://github.com/dmerkulenko.png?size=50)](https://github.com/dmerkulenko)
 [![](https://github.com/krom17.png?size=50)](https://github.com/krom17)
-<!-- [![](https://github.com/jake.png?size=50)](https://github.com/jake) -->
+[![](https://github.com/JakeKJShin.png?size=50)](https://github.com/JakeKJShin)
 
 ## References and Resources
+[Moralis Mutant NFT Engine](https://github.com/ashbeech/moralis-mutants-nft-engine)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
