@@ -69,7 +69,7 @@ if st.button("Contribute"):
         )
     else:
         tx_hash = selected_contract.functions.contribute(tip_amount).transact(
-            {"from": address, "gas": 1000000, "value": contribution_amount}
+            {"from": address, "gas": 1000000, "value": contribution_amount + tip_amount}
         )
         receipt = w3.eth.waitForTransactionReceipt(tx_hash)
         st.write("Transaction receipt mined:")
