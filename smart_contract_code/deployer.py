@@ -17,8 +17,8 @@ with open("contracts/bytecode.txt") as file:
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 chain_id = 1337
 
-address = "0x0D9bb29EeF36200bbeA73691f6E37b11f1b76396"
-private_key = "793d42fa715b3fec9e8cb0f06536318c6b937c7c7ecf6f9ab0d949e49b7b987a"
+address = "0x9D0bA6b701c7Ae217d4Bb68b9abB74D5beb26875"
+private_key = "9fad9b106458f9997bf6609b9e07c00defe8f7c97cf9cf9d92de768f9d964d7f"
 
 # Create the contract in Python
 new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
