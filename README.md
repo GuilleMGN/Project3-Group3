@@ -51,7 +51,9 @@ of-work* to maintain the integrity of the ledger and to prevent people from corr
 
 of parties whose identities are known. Thus, the system is valid because only credible and reputable participants can post to the 
 
-ledger. Because participants’ identities are known, their transactions can therefore be audited.
+ledger. Because participants’ identities are known, their transactions can therefore be audited. As an example of centralization, the contract allows 
+
+the deployer(end user) to choose whether or not the contract should have the option to issue refunds to its contributors.
 
 
 
