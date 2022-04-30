@@ -56,6 +56,7 @@ contribution_amount = int(
         min_value=dictionary[selected]["contribution_minimum"],
     )
 )
+tip_amount = int(st.number_input("Select an amount to tip"))
 selected_contract = contract[selected]
 today = int(datetime.datetime.today().timestamp())
 if st.button("Contribute"):
@@ -67,7 +68,7 @@ if st.button("Contribute"):
             "Fundraising date has passed, you cannot contribute to this fundraiser!"
         )
     else:
-        tx_hash = selected_contract.functions.contribute().transact(
+        tx_hash = selected_contract.functions.contribute(tip_amount).transact(
             {"from": address, "gas": 1000000, "value": contribution_amount}
         )
         receipt = w3.eth.waitForTransactionReceipt(tx_hash)
