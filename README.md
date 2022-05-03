@@ -35,7 +35,14 @@ To Create a decentralized fundraising in Solidity
 * Streamlit
 
 ## Instructions
-
+1. Clone this repository
+2. Load up Ganache
+3. In the deployer.py file, change the 'address' and 'private_key' variables so that they are one of the accounts from Ganache (representing a Meta Mask account)
+4. streamlit run deployer.py
+5. Enter the details of your fundraising initiative in the streamlit web-form. The details are saved to the .csv
+6. streamlit run contribution.py
+7. Choose the previously created contract from step 5
+8. Make a contribution to the selected contract
 ## Application
 
 ### NFT
