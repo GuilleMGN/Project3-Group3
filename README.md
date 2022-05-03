@@ -52,21 +52,23 @@ Below are the hyperlinks to a randomly generated image and metadata.
 ## Centralized vs Decentralized Contracts
 
 
-Smart Contracts can be considered to be back-end APIs running in the Blockchain, Decentralized Applications are the front-end or UX. They represent the visible layer connecting users or other applications with the Smart Contracts running in the Blockchain.
+Smart Contracts are scripts on the blockchain that can be interacted with by the public.
 
-Every Ethereum node connected to the Blockchain exposes an RPC-JSON interface over HTTPS or Web Sockets that any Dapp can use to connect and submit transactions.
+There are two methods to interact with these scripts that we learned in class; 
 
-A client library is required in your language of preference to talk to that interface.
- 
-A blockchain can be either centralized or decentralized. It is important, however, that decentralized not be confused with distributed. While a blockchain is inherently distributed (meaning that many parties hold copies of the ledger), it is not inherently decentralized.
+1)	Remix, a browser based IDE, and 
+2)	the Python Web3 library.
 
-Whether a blockchain is centralized or decentralized simply refers to the rights of participants on the ledger, and is therefore a question of design.
+Depending on the use, blockchain can have a centralized or decentralized implementation. 
 
-In a decentralized network, anyone can participate and transact on the ledger. As a result, mechanisms must exist in order to combat the vulnerabilities that arise from this design and to ensure that transactions are correct. Bitcoin, for example, is a decentralized blockchain that uses mining and proof-of-work* to maintain the integrity of the ledger and to prevent people from corrupting the system.
+In class we learned about the decentralized Ethereum blockchain.
 
-A centralized network, on the other hand, is made up of parties whose identities are known. Thus, the system is valid because only credible and reputable participants can post to the ledger. Because participants’ identities are known, their transactions can therefore be audited.
+Owing to its decentralized nature, anyone can interact with the contract, so the contract has to be designed so that it accommodates for this.
 
-As an example of centralization, the contract allows the deployer(end user) to choose whether or not the contract should have the option to issue  refunds to its contributors.
+In our contract, we considered that the stakeholders of the contract would require an element of control after the contract had been deployed onto the blockchain,  returning a measure of centralization to the process.
+
+Specifically, the contract allows the deployer(end user) to choose whether or not the contract should have the option to issue refunds to its contributors.
+
 
 
 
