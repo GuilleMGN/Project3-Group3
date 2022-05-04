@@ -57,7 +57,7 @@ We have randomly layered background, shapes and notes for unique images which wo
 
 Below are steps taken to successfully generate images and sent to Moralis, which provides managed backend services for blockchain projects. 
 
-1. Simple images were generated and constructed to be layered
+1. Simple images were generated and constructed to be layered <br>
 ![1](https://github.com/GuilleMGN/Project3-Group3/blob/readme/images/Layer%20Inputs.PNG?raw=true)
 
 2. Updated configure.js file in input folder to reflect the new layers
