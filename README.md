@@ -1,5 +1,5 @@
+![title](/images/title.PNG)
 # Crypto Crowdfunding 
-
 
 ## Description
 This project aims to start a crowdfunding contract in solidity and distribute NFTs as an incentive for contributors in a form of a picture (using a streamlit front end). 
@@ -20,12 +20,13 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
   - [License](#license)
 
 ## Goals
-To Create a decentralized fundraising in Solidity
+To create a decentralized fundraising in Solidity with a goal to decentralize the fundraising process, tap into an organization's intangible value, and to improve the user experience with a front end.
 
 ## Technologies
 * Ganache
 * Remix
-* Javascript Moralis Mutant NFT Engine
+* Javascript 
+* Moralis Mutant NFT Engine
 * Python
 * Solidity
 * Web3
@@ -35,8 +36,20 @@ To Create a decentralized fundraising in Solidity
 * Streamlit
 
 ## Instructions
+1. Clone this [repository](https://github.com/GuilleMGN/Project3-Group3)
+2. Load up [Ganache](https://trufflesuite.com/ganache/)
+3. In the [deployer.py](smart_contract_code/deployer.py) file, change the `address` and `private_key` variables so that they are one of the accounts from Ganache (representing a MetaMask account)
+4. `streamlit run deployer.py`
+5. Enter the details of your fundraising initiative in the streamlit web-form. The details are saved to the `.csv`
+6. `streamlit run contribution.py`| (run `streamlit run test_copy.py` if experiencing environment errors)
+7. Choose the previously created contract from step 5
+8. Make a contribution to the selected contract
+9. When the fundraising is complete, the application mints an NFT for each contributor in the contributor list array
+![Contributor List](images/contributor-list.png)
 
 ## Application
+
+
 
 ### NFT
 Leveraging and editing the code from [moralis-mutant-nft-engine](https://github.com/ashbeech/moralis-mutants-nft-engine), we have created randomized images to show appreciation to the contributors. 
@@ -48,30 +61,32 @@ Below are the hyperlinks to a randomly generated image and metadata.
 [Moralis NFT Image URL](https://ipfs.moralis.io:2053/ipfs/QmQfnGGbQxZtTNQ8mKvKLvNQJaX1J2xc2n9iDKhjXD5zFF/images/0000000000000000000000000000000000000000000000000000000000000009.png) <br>
 [Moralis NFT Metadata](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
 
-
 ## Centralized vs Decentralized Contracts
+Smart Contracts are scripts on the blockchain that can be interacted with by the public.
 
+There are two methods to interact with these scripts that we learned in class: 
 
-Smart Contracts can be considered to be back-end APIs running in the Blockchain, Decentralized Applications are the front-end or UX. They represent the visible layer connecting users or other applications with the Smart Contracts running in the Blockchain.
+1)	Remix (Browser Based IDE) 
+2)	Python Web3 Library 
 
-Every Ethereum node connected to the Blockchain exposes an RPC-JSON interface over HTTPS or Web Sockets that any Dapp can use to connect and submit transactions.
+Depending on the use, blockchain can have a centralized or decentralized implementation. 
 
-A client library is required in your language of preference to talk to that interface.
- 
-A blockchain can be either centralized or decentralized. It is important, however, that decentralized not be confused with distributed. While a blockchain is inherently distributed (meaning that many parties hold copies of the ledger), it is not inherently decentralized.
+In class we learned about the decentralized Ethereum blockchain.
 
-Whether a blockchain is centralized or decentralized simply refers to the rights of participants on the ledger, and is therefore a question of design.
+Owing to its decentralized nature, anyone can interact with the contract, so the contract has to be designed so that it accommodates for this.
 
-In a decentralized network, anyone can participate and transact on the ledger. As a result, mechanisms must exist in order to combat the vulnerabilities that arise from this design and to ensure that transactions are correct. Bitcoin, for example, is a decentralized blockchain that uses mining and proof-of-work* to maintain the integrity of the ledger and to prevent people from corrupting the system.
+In our contract, we considered that the stakeholders of the contract would require an element of control after the contract had been deployed onto the blockchain, returning a measure of centralization to the process.
 
-A centralized network, on the other hand, is made up of parties whose identities are known. Thus, the system is valid because only credible and reputable participants can post to the ledger. Because participants’ identities are known, their transactions can therefore be audited.
+Specifically, the contract allows the deployer (end user) to choose whether or not the contract should have the option to issue refunds to its contributors.
 
-
+## Limitations
+* Using streamlit enabled us to fabricate a front-end, but we spent time troubleshooting streamlit specific errors.
+* We imported the ERC721 contract as a base, but did not explore whether there were other contracts available.
+* We weren't able to implement the solc-x libary in Python. Updating the .sol file in remix and exporting the bytecode and abi for use in VS-code was unwieldy and limited the number of iterations of the .sol file that we could do.
 
 ## Conclusion
 
 ## Contributors
-
 [![](https://github.com/GuilleMGN.png?size=50)](https://github.com/GuilleMGN)
 [![](https://github.com/Yu9Psx2.png?size=50)](https://github.com/Yu9Psx2)
 [![](https://github.com/dmerkulenko.png?size=50)](https://github.com/dmerkulenko)

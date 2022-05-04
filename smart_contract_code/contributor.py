@@ -34,6 +34,9 @@ def load_contract():
     # Get the contract
     counter = 0
     for i in contract_address:
+        #print(i)
+        #print(crowdfund_abi)
+        #break
         contracts[i] = w3.eth.contract(address=i, abi=crowdfund_abi)
         counter += 1
     return contracts
@@ -42,21 +45,72 @@ def load_contract():
 # Load the contract
 contract = load_contract()
 # contract_names = [d["beneficiary_name"] for d in contract]
+
+# 1. Project Title
 st.title("Contribute to a contract")
+
+# 2. Select a contract
 accounts = w3.eth.accounts
 selected_name = st.selectbox(
     "Select a contract", options=name_to_contract_dictionary.keys()
 )
 selected = name_to_contract_dictionary[selected_name]
+
+# 3. Select a Contributing Wallet
 address = st.selectbox("Select your contributing wallet", options=accounts)
 
-contribution_amount = int(
-    st.number_input(
-        "Select an amount to contribute",
+# 4A. USD dollar amount
+usd_amount = st.number_input(
+        "Select an amount to contribute in USD",
         min_value=dictionary[selected]["contribution_minimum"],
     )
+
+# 4B. ETH amount = contibution_amount Convert USD to wei
+import requests
+
+url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key=b13fe0d24e23abff0b6054424874351e7985fcd73461de3d78552418ba30f3e7"
+
+response = requests.get(url).json()
+
+price = response["USD"]
+
+def convert_to_USD(x) :
+    somme = price*x
+    return somme
+
+#print(convert_to_USD(1),"USD")
+
+def convert_to_ETH(x) :
+    s = x/price
+    somme = round(s,6) 
+    return somme
+
+#print(convert_to_ETH(1),"ETH")
+
+if usd_amount>0:
+    converted = convert_to_ETH(usd_amount)
+    st.write("Your contribution in ETH: ")
+    st.write(converted)
+    converted_to_wei = converted * 1000000000000000000
+    st.write("Your contribution in wei: ")
+    st.write(converted_to_wei)
+else:
+    ()
+
+# 5. Tip Amount
+
+tip_amount = int(
+    st.slider("Tip Our Crowdfunding Project %", min_value=0.0, max_value=100.0, format="%g percent")
 )
-tip_amount = int(st.number_input("Select an amount to tip"))
+# 6. Total Breakdown
+
+total = int(converted_to_wei * (1+tip_amount/100))
+with st.sidebar:
+    st.markdown("**Here's Your Contribution Breakdown:**")
+    st.markdown("Contribution to " + str(selected_name) + " project:" + str(converted_to_wei)+ " wei")
+    st.markdown("Crowdfunding Tip: " + str(tip_amount)+ " %")
+    st.markdown("**Total: " + str(total) + " wei**")
+
 selected_contract = contract[selected]
 today = int(datetime.datetime.today().timestamp())
 if st.button("Contribute"):
@@ -68,8 +122,8 @@ if st.button("Contribute"):
             "Fundraising date has passed, you cannot contribute to this fundraiser!"
         )
     else:
-        tx_hash = selected_contract.functions.contribute(tip_amount).transact(
-            {"from": address, "gas": 1000000, "value": contribution_amount + tip_amount}
+        tx_hash = selected_contract.functions.contribute(int(total - converted_to_wei)).transact(
+            {"from": address, "gas": 1000000, "value": total}
         )
         receipt = w3.eth.waitForTransactionReceipt(tx_hash)
         st.write("Transaction receipt mined:")
@@ -77,6 +131,11 @@ if st.button("Contribute"):
     st.write(
         "Contract has raised: "
         + str(selected_contract.functions.raised().call())
-        + " so far"
-    )
+        + " so far")
+    st.balloons()
 st.markdown("---")
+
+
+#tx_hash = selected_contract.functions.contribute(tip_amount).transact(
+            #{"from": address, "gas": 1000000, "value": contribution_amount+tip_amount}
+        #)
