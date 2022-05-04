@@ -20,7 +20,7 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
   - [License](#license)
 
 ## Goals
-To create a decentralized fundraising in Solidity with a goal to decentralize the fundraising process, tap into an organization's intangible value, and to improve the user experience with a front end.
+Decentralize the fundraising process, tap into an organization's intangible value, and to improve the user experience with a front end.
 
 ## Technologies
 * Ganache
