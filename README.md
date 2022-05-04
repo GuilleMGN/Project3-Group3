@@ -83,6 +83,7 @@ Specifically, the contract allows the deployer (end user) to choose whether or n
 * Using streamlit enabled us to fabricate a front-end, but we spent time troubleshooting streamlit specific errors.
 * We imported the ERC721 contract as a base, but did not explore whether there were other contracts available.
 * We weren't able to implement the solc-x libary in Python. Updating the .sol file in remix and exporting the bytecode and abi for use in VS-code was unwieldy and limited the number of iterations of the .sol file that we could do.
+* Gas costs in dollar terms might be too high for the contract to be implemented in a practical manner.
 
 ## Conclusion
 
