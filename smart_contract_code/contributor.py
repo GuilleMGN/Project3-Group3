@@ -58,17 +58,10 @@ selected = name_to_contract_dictionary[selected_name]
 
 # 3. Select a Contributing Wallet
 
-#print(int(dictionary[selected]["contribution_minimum"]))
+address = st.selectbox("Select your contributing wallet", options=accounts)
 
 # 4A. USD dollar amount
-usd_amount = st.number_input(
-        "Select an amount to contribute in USD",
-        min_value= int(dictionary[selected]["contribution_minimum"]),
-        #max_value = int((dictionary[selected]["contribution_minimum"])*10)
-        #min_value = 10000
-    )
 
-# 4B. ETH amount = contibution_amount Convert USD to wei
 import requests
 
 url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key=b13fe0d24e23abff0b6054424874351e7985fcd73461de3d78552418ba30f3e7"
@@ -77,10 +70,25 @@ response = requests.get(url).json()
 
 price = response["USD"]
 
+def convert_to_USD(x) :
+    somme = price*x
+    return somme
+
 def convert_to_ETH(x) :
     s = x/price
     somme = round(s,6) 
     return somme
+
+min_value_wei= int(dictionary[selected]["contribution_minimum"])
+min_value_eth = min_value_wei/1000000000000000000
+min_value_usd = convert_to_USD(min_value_eth)
+
+usd_amount = st.number_input(
+    "Select an amount to contribute in USD",
+    min_value_usd
+    )
+
+# 4B. ETH amount = contibution_amount Convert USD to wei
 
 if usd_amount>0:
     converted = convert_to_ETH(usd_amount)
