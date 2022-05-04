@@ -79,6 +79,11 @@ In our contract, we considered that the stakeholders of the contract would requi
 
 Specifically, the contract allows the deployer (end user) to choose whether or not the contract should have the option to issue refunds to its contributors.
 
+## Limitations
+* Using streamlit enabled us to fabricate a front-end, but we spent time troubleshooting streamlit specific errors.
+* We imported the ERC721 contract as a base, but did not explore whether there were other contracts available.
+* We weren't able to implement the solc-x libary in Python. Updating the .sol file in remix and exporting the bytecode and abi for use in VS-code was unwieldy and limited the number of iterations of the .sol file that we could do.
+
 ## Conclusion
 
 ## Contributors
