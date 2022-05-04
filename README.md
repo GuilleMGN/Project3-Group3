@@ -1,4 +1,4 @@
-![title](/images/title.PNG)
+![title](/images/title.png)
 # Crypto Crowdfunding 
 
 ## Description
