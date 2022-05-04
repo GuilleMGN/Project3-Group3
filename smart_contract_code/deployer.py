@@ -1,4 +1,4 @@
-from solcx import compile_standard, install_solc
+#from solcx import compile_standard, install_solc
 import json
 from web3 import Web3
 import os
@@ -17,16 +17,48 @@ with open("contracts/bytecode.txt") as file:
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 chain_id = 1337
 
-address = "0x9D0bA6b701c7Ae217d4Bb68b9abB74D5beb26875"
-private_key = "9fad9b106458f9997bf6609b9e07c00defe8f7c97cf9cf9d92de768f9d964d7f"
+address = "0x332ddf7E36113b5D6C16C7a13221253bbc8dAc03"
+private_key = "c6c00560b926a14f14b90d4f6c41675d7a1fbf2d2ace4546eca1c251b6281ad6"
 
 # Create the contract in Python
 new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
 # Get the number of latest transaction
 st.title("Create a contract")
 organization_name = st.text_input("Enter your organization's name")
-goal_amount = int(st.number_input("Select your fundraising goal"))
-contribution_minimum = int(st.number_input("Select the minimum amount to contribute"))
+usd_amount = int(st.number_input("Select your fundraising goal in USD"))
+#Convert from USD to ETH and then to wei
+import requests
+
+url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key=b13fe0d24e23abff0b6054424874351e7985fcd73461de3d78552418ba30f3e7"
+
+response = requests.get(url).json()
+
+price = response["USD"]
+
+def convert_to_ETH(x) :
+    s = x/price
+    somme = round(s,6) 
+    return somme
+
+if usd_amount>0:
+    converted = convert_to_ETH(usd_amount)
+    st.write("Your foundraising goal in ETH: ")
+    st.write(converted)
+    goal_amount = int(converted * 1000000000000000000)
+    st.write("Your foundraising goal in wei: ")
+    st.write(goal_amount)
+else:
+    ()
+usd_minimum = int(st.number_input("Select the minimum amount to contribute in USD"))
+if usd_minimum>0:
+    minimum_converted = convert_to_ETH(usd_minimum)
+    st.write("Your contribution minimum in ETH: ")
+    st.write(minimum_converted)
+    contribution_minimum= int(minimum_converted * 1000000000000000000)
+    st.write("Your foundraising goal in wei: ")
+    st.write(contribution_minimum)
+else:
+    ()
 beneficiary_address = st.text_input("Paste your beneficiary address")
 uri = st.text_input("Paste your URI")
 end_date_input = st.date_input("Enter your end date")
@@ -61,7 +93,7 @@ if st.button("Deploy Contract"):
     st.write("Deploying Contract!")
     # Send the transaction
     transaction_hash = w3.eth.send_raw_transaction(sign_transaction.rawTransaction)
-    # Wait for the transaction to be mined, and get the transaction receipt
+    #Wait for the transaction to be mined, and get the transaction receipt
     st.write("Waiting for transaction to finish...")
     transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
     st.write(f"Done! Contract deployed to {transaction_receipt.contractAddress}")

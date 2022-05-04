@@ -57,12 +57,15 @@ selected_name = st.selectbox(
 selected = name_to_contract_dictionary[selected_name]
 
 # 3. Select a Contributing Wallet
-address = st.selectbox("Select your contributing wallet", options=accounts)
+
+#print(int(dictionary[selected]["contribution_minimum"]))
 
 # 4A. USD dollar amount
 usd_amount = st.number_input(
         "Select an amount to contribute in USD",
-        min_value=dictionary[selected]["contribution_minimum"],
+        min_value= int(dictionary[selected]["contribution_minimum"]),
+        #max_value = int((dictionary[selected]["contribution_minimum"])*10)
+        #min_value = 10000
     )
 
 # 4B. ETH amount = contibution_amount Convert USD to wei
@@ -74,18 +77,10 @@ response = requests.get(url).json()
 
 price = response["USD"]
 
-def convert_to_USD(x) :
-    somme = price*x
-    return somme
-
-#print(convert_to_USD(1),"USD")
-
 def convert_to_ETH(x) :
     s = x/price
     somme = round(s,6) 
     return somme
-
-#print(convert_to_ETH(1),"ETH")
 
 if usd_amount>0:
     converted = convert_to_ETH(usd_amount)
