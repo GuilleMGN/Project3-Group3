@@ -11,6 +11,8 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
   - [Technologies](#technologies)
   - [Instructions](#instructions)
   - [Application](#application)
+    - [Deploying a new contract](#deploying-a-new-contract)
+    - [Making a contribution to the contract](#making-a-contribution-to-the-contract)
     - [NFT](#nft)
   - [Centralized vs Decentralized Contracts](#centralized-vs-decentralized-contracts)
   - [Conclusion](#conclusion)
@@ -47,8 +49,12 @@ To create a decentralized fundraising in Solidity
 ![Contributor List](images/contributor-list.png)
 
 ## Application
-
+### Deploying a new contract
 ![Deployer_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/contributor.gif)
+
+<br>
+
+### Making a contribution to the contract
 ![Contributor_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/deployer.gif)
 
 ### NFT
