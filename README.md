@@ -12,6 +12,8 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
   - [Technologies](#technologies)
   - [Instructions](#instructions)
   - [Application](#application)
+    - [Deploying a new contract](#deploying-a-new-contract)
+    - [Making a contribution to the contract](#making-a-contribution-to-the-contract)
     - [NFT](#nft)
   - [Centralized vs Decentralized Contracts](#centralized-vs-decentralized-contracts)
   - [Conclusion](#conclusion)
@@ -48,18 +50,37 @@ Decentralize the fundraising process, tap into an organization's intangible valu
 ![Contributor List](images/contributor-list.png)
 
 ## Application
+### Deploying a new contract
+![Deployer_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/contributor.gif)
 
+<br>
 
+### Making a contribution to the contract
+![Contributor_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/deployer.gif)
 
 ### NFT
 Leveraging and editing the code from [moralis-mutant-nft-engine](https://github.com/ashbeech/moralis-mutants-nft-engine), we have created randomized images to show appreciation to the contributors. 
 
 We have randomly layered background, shapes and notes for unique images which would have been used for generating NFTs. 
 
+Below are steps taken to successfully generate images and sent to Moralis, which provides managed backend services for blockchain projects. 
+
+1. Simple images were generated and constructed to be layered <br>
+![1](https://github.com/GuilleMGN/Project3-Group3/blob/readme/images/Layer%20Inputs.PNG?raw=true)
+
+2. Updated configure.js file in input folder to reflect the new layers
+![2](https://github.com/GuilleMGN/Project3-Group3/blob/readme/images/NFT-Layers.PNG?raw=true)
+
+
+3. Run index.js file to generate randomly layered images for NFT and to send the images to Moralis (3)<br>
+![3](https://github.com/GuilleMGN/Project3-Group3/blob/readme/images/node%20index.PNG?raw=true)
+
+
 Below are the hyperlinks to a randomly generated image and metadata.
 
+[Moralis NFT Dashboard URL](https://ggdm8rselphi.usemoralis.com:2083/apps/moralisDashboard/browser/Metadata)<br>
 [Moralis NFT Image URL](https://ipfs.moralis.io:2053/ipfs/QmQfnGGbQxZtTNQ8mKvKLvNQJaX1J2xc2n9iDKhjXD5zFF/images/0000000000000000000000000000000000000000000000000000000000000009.png) <br>
-[Moralis NFT Metadata](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
+[Moralis NFT Metadata json file URL](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
 
 ## Centralized vs Decentralized Contracts
 Smart Contracts are scripts on the blockchain that can be interacted with by the public.
