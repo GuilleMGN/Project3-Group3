@@ -16,6 +16,7 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
     - [Making a contribution to the contract](#making-a-contribution-to-the-contract)
     - [NFT](#nft)
   - [Centralized vs Decentralized Contracts](#centralized-vs-decentralized-contracts)
+  - [Limitations](#limitations)
   - [Conclusion](#conclusion)
   - [Contributors](#contributors)
   - [References and Resources](#references-and-resources)
@@ -51,12 +52,12 @@ Decentralize the fundraising process, tap into an organization's intangible valu
 
 ## Application
 ### Deploying a new contract
-![Deployer_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/contributor.gif)
+![Deployer_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20demo%20recordings/deployer-recording.gif?raw=true)
 
 <br>
 
 ### Making a contribution to the contract
-![Contributor_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/deployer.gif)
+![Contributor_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20demo%20recordings/contributor-recording.gif?raw=true)
 
 ### NFT
 Leveraging and editing the code from [moralis-mutant-nft-engine](https://github.com/ashbeech/moralis-mutants-nft-engine), we have created randomized images to show appreciation to the contributors. 
