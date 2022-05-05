@@ -97,7 +97,7 @@ if usd_amount>0:
 else:
     ()
 
-# 5. Tip Amount
+# 5. Tip Amount 
 
 tip_amount = int(
     st.slider("Tip Our Crowdfunding Project %", min_value=0.0, max_value=100.0, format="%g percent")
@@ -134,8 +134,3 @@ if st.button("Contribute"):
         + " so far")
     st.balloons()
 st.markdown("---")
-
-
-#tx_hash = selected_contract.functions.contribute(tip_amount).transact(
-            #{"from": address, "gas": 1000000, "value": contribution_amount+tip_amount}
-        #)
