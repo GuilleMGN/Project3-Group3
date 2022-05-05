@@ -48,7 +48,8 @@ To create a decentralized fundraising in Solidity
 
 ## Application
 
-
+![Deployer_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/contributor.gif)
+![Contributor_Demo](https://github.com/GuilleMGN/Project3-Group3/blob/main/Frontend%20Demo%20Recordings/deployer.gif)
 
 ### NFT
 Leveraging and editing the code from [moralis-mutant-nft-engine](https://github.com/ashbeech/moralis-mutants-nft-engine), we have created randomized images to show appreciation to the contributors. 
