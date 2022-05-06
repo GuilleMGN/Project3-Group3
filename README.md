@@ -1,5 +1,5 @@
-![title](/images/title.PNG)
 # Crypto Crowdfunding 
+![title](/images/title.PNG)
 
 ## Description
 This project aims to start a crowdfunding contract in solidity and distribute NFTs as an incentive for contributors in a form of a picture (using a streamlit front end). 
@@ -23,7 +23,8 @@ This project aims to start a crowdfunding contract in solidity and distribute NF
   - [License](#license)
 
 ## Goals
-Decentralize the fundraising process, tap into an organization's intangible value, and to improve the user experience with a front end.
+Overall, we plan to decentralize the fundraising process, tap into an organization's intangible value, and improve the user experience with a front end. 
+To reduce substantial risks of fraud, we aim to provide trust, accountability, and operational transparency. 
 
 ## Technologies
 * Ganache
@@ -83,6 +84,8 @@ Below are the hyperlinks to a randomly generated image and metadata.
 [Moralis NFT Image URL](https://ipfs.moralis.io:2053/ipfs/QmQfnGGbQxZtTNQ8mKvKLvNQJaX1J2xc2n9iDKhjXD5zFF/images/0000000000000000000000000000000000000000000000000000000000000009.png) <br>
 [Moralis NFT Metadata json file URL](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
 
+---
+
 ## Centralized vs Decentralized Contracts
 Smart Contracts are scripts on the blockchain that can be interacted with by the public.
 
@@ -108,6 +111,17 @@ Specifically, the contract allows the deployer (end user) to choose whether or n
 * Gas costs in dollar terms might be too high for the contract to be implemented in a practical manner.
 
 ## Conclusion
+* We enabled contract creator to give themselves access to decentralized crowdfunding
+* We successfully deployed two separate front-ends for organizations and contributors
+* We generated NFTs upon reaching the target amount/date
+* We devised an early business use case
+
+### Further integration examples:
+* In case of incomplete funding target goals, provide options to reinvest in other projects in addition to being refunded
+* Decentralized: More fail-safes and optionality
+* Centralized: Off-chain rewards that will identify token holders in real life
+
+---
 
 ## Contributors
 [![](https://github.com/GuilleMGN.png?size=50)](https://github.com/GuilleMGN)
