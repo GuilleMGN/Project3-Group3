@@ -91,9 +91,9 @@ Below are the hyperlinks to a randomly generated image and metadata.
 [Moralis NFT Metadata json file URL](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
 
 <p float="left">
-  <img src="images/nft_1.png" width="100" />
-  <img src="images/nft_2.png" width="100" /> 
-  <img src="images/nft_3.png" width="100" />
+  <img src="images/nft_1.png" width="1000" />
+  <img src="images/nft_2.png" width="1000" /> 
+  <img src="images/nft_3.png" width="1000" />
 </p>
 ---
 
