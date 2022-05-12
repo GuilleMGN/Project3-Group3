@@ -92,9 +92,9 @@ Below are the hyperlinks to a randomly generated image and metadata.
 
 ### NFT Examples
 <p float="left">
-  <img src="images/nft_1.png" width="500" />
-  <img src="images/nft_2.png" width="500" /> 
-  <img src="images/nft_3.png" width="500" />
+  <img src="images/nft_1.png" width="250" />
+  <img src="images/nft_2.png" width="250" /> 
+  <img src="images/nft_3.png" width="250" />
 </p>
 ---
 
