@@ -17,8 +17,8 @@ with open("contracts/bytecode.txt") as file:
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 chain_id = 1337
 
-address = "0xB2e5649c228Aa2281323E0a0B3BfC70382744F1D"
-private_key = "fa25b78324f59d922e524c734c28e04e48da045920f3c8ec3ddd46bc36d88d21"
+address = "0x332ddf7E36113b5D6C16C7a13221253bbc8dAc03"
+private_key = "c6c00560b926a14f14b90d4f6c41675d7a1fbf2d2ace4546eca1c251b6281ad6"
 
 # Create the contract in Python
 new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
@@ -26,7 +26,6 @@ new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
 st.title("Create a contract")
 organization_name = st.text_input("Enter your organization's name")
 usd_amount = int(st.number_input("Select your fundraising goal in USD"))
-
 #Convert from USD to ETH and then to wei
 import requests
 
@@ -94,11 +93,7 @@ if st.button("Deploy Contract"):
     st.write("Deploying Contract!")
     # Send the transaction
     transaction_hash = w3.eth.send_raw_transaction(sign_transaction.rawTransaction)
-<<<<<<< Updated upstream
-    # Wait for the transaction to be mined, and get the transaction receipt 
-=======
     #Wait for the transaction to be mined, and get the transaction receipt
->>>>>>> Stashed changes
     st.write("Waiting for transaction to finish...")
     transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
     st.write(f"Done! Contract deployed to {transaction_receipt.contractAddress}")
@@ -113,7 +108,6 @@ if st.button("Deploy Contract"):
                 contribution_minimum,
                 uri,
                 end_date,
-                usd_minimum
             ]
         )
         file.close()
