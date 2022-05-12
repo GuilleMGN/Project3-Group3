@@ -1,5 +1,5 @@
 # NFT Incentivized Crypto Crowdfunding 
-![title](/images/title_pic.PNG)
+![title](images/title_pic.png)
 
 ## Description
 
