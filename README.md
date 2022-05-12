@@ -90,6 +90,11 @@ Below are the hyperlinks to a randomly generated image and metadata.
 [Moralis NFT Image URL](https://ipfs.moralis.io:2053/ipfs/QmQfnGGbQxZtTNQ8mKvKLvNQJaX1J2xc2n9iDKhjXD5zFF/images/0000000000000000000000000000000000000000000000000000000000000009.png) <br>
 [Moralis NFT Metadata json file URL](https://ipfs.moralis.io:2053/ipfs/QmcaUdQt3Ts2wAiEXBoQmccLsyu7jBqzbdMbVWRoV52a6p/metadata/0000000000000000000000000000000000000000000000000000000000000009.json)
 
+<p float="left">
+  <img src="images/nft_1.png" width="100" />
+  <img src="images/nft_2.png" width="100" /> 
+  <img src="images/nft_3.png" width="100" />
+</p>
 ---
 
 ## Centralized vs Decentralized Contracts
