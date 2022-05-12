@@ -1,8 +1,14 @@
-# Crypto Crowdfunding 
+# NFT Incentivized Crypto Crowdfunding 
 ![title](/images/title.PNG)
 
 ## Description
-This project aims to start a crowdfunding contract in solidity and distribute NFTs as an incentive for contributors in a form of a picture (using a streamlit front end). 
+
+Crowdfunding - is a practice of raising funds independently of any government and is a way for people/organizations to raise big money by asking a large amount of people for a small amount of money. Why crypto croundfunding you may ask, well because it will help maximize the donator’s impact due to tax benefits. As the organization will receive the whole sum without having to pay taxes. The project is a blockchain-enabled crowdfunding and is a fintech solution to fundraising. We created a simple ERC721 contract that receives donations and forwards money to a beneficiary. Our frontend is built with Streamlit and allows users to deploy a contract and start collecting money for their organizations as well as for customers to contribute to already existing contract. To incentivize our users, we are minting NFTs in a form of a unique picture in return for a contribution. 
+
+## Goals
+
+Our goals are to create a decentralized fundraising application, with which we are aiming to reduce substantial risks of fraud that are common in case of such projects. As well as provide trust, accountability and operational transparency to our users. We are aiming to attract super fans by allowing them to tap into the organization’s intangible value. And lastly we want to improve the user experience with a user friendly front end. 
+
 
 ## Table of Contents
 - [Crypto Crowdfunding](#crypto-crowdfunding)

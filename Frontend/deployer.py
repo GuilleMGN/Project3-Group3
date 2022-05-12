@@ -9,16 +9,16 @@ import streamlit as st
 import csv
 import datetime
 
-with open("contracts/crowdfund_abi.json") as file:
+with open("../smart_contract_code/contracts/crowdfund_abi.json") as file:
     abi = json.load(file)
-with open("contracts/bytecode.txt") as file:
+with open("../smart_contract_code/contracts/bytecode.txt") as file:
     bytecode = json.load(file)
 
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 chain_id = 1337
 
-address = "0x332ddf7E36113b5D6C16C7a13221253bbc8dAc03"
-private_key = "c6c00560b926a14f14b90d4f6c41675d7a1fbf2d2ace4546eca1c251b6281ad6"
+address = "0xB2e5649c228Aa2281323E0a0B3BfC70382744F1D"
+private_key = "fa25b78324f59d922e524c734c28e04e48da045920f3c8ec3ddd46bc36d88d21"
 
 # Create the contract in Python
 new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
@@ -26,6 +26,7 @@ new_contract = w3.eth.contract(abi=abi, bytecode=bytecode)
 st.title("Create a contract")
 organization_name = st.text_input("Enter your organization's name")
 usd_amount = int(st.number_input("Select your fundraising goal in USD"))
+
 #Convert from USD to ETH and then to wei
 import requests
 
@@ -108,6 +109,7 @@ if st.button("Deploy Contract"):
                 contribution_minimum,
                 uri,
                 end_date,
+                usd_minimum
             ]
         )
         file.close()
